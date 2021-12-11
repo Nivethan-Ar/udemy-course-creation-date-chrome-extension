@@ -1,0 +1,38 @@
+{
+  "manifest_version": 2,
+  "name": "Course Creation Info for UDEMY",
+  "version": "0.0.0.1",
+  "permissions": [
+    "declarativeContent"
+  ],
+  "background": {
+    "scripts": [
+      "background.js"
+    ],
+    "persistent": false
+  },
+  "description": "an extension that can tell you the creation date of the courses rather than less useful last updated date ",
+  "icons": {
+    "16": "./icons/calendar-16.png",
+    "48": "./icons/calendar-32.png",
+    "128": "./icons/calendar-128.png"
+  },
+  "page_action": {
+    "default_icon": {
+      "16": "./icons/calendar-16.png",
+      "48": "./icons/calendar-32.png",
+      "128": "./icons/calendar-128.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://colonline.udemy.com/*",
+        "https://www.udemy.com/course/*"
+      ],
+      "js": [
+        "./index.js"
+      ]
+    }
+  ]
+}
